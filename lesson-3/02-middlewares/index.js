@@ -3,7 +3,7 @@ import express from 'express';
 const app = express();
 
 function checkAuth(req, res, next) {
-  console.log('Middleware 1');
+  console.log('Check auth');
 
   if (req.query['api-key'] !== '123456789') {
     return res.send('Please provide a valid api key');
@@ -20,11 +20,11 @@ function middleware3(req, res, next) {
 
 // app.use(checkAuth);
 
-app.use((req, res, next) => {
-  console.log('Middleware 2');
+// app.use((req, res, next) => {
+//   console.log('Middleware 2');
 
-  next();
-});
+//   next();
+// });
 
 app.get(
   '/',
@@ -35,6 +35,7 @@ app.get(
   middleware3,
   middleware3,
   (req, res) => {
+    console.log("Hello, Express");
     res.send('Hello, Express');
   },
 );
