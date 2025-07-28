@@ -1,0 +1,6 @@
+SMTP_HOST=smtp-relay.brevo.com
+SMTP_PORT=587
+SMTP_LOGIN=79f2cc001@smtp-brevo.com
+SMTP_PASSWORD=xsmtpsib-5ca41876c02ce7be48a540287154b756041b0a36a267509c5c164a1e10409b67-OygZ1h6U2j4BENYb
+
+Note: Use vmudrij0508@gmail.com as from option when sent email
