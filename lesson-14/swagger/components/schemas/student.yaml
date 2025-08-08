@@ -1,0 +1,48 @@
+type: object
+required:
+  - _id
+  - name
+  - gender
+  - year
+  - avatar
+  - ownerId
+  - createdAt
+  - updatedAt
+properties:
+  _id:
+    type: string
+    description: Student id
+    example: 68962e8e5ae0a5402d96f9b6
+  name:
+    type: string
+    description: Student name
+    example: John Deere
+  gender:
+    type: string
+    description: Student name
+    enum: ['male', 'female']
+  year:
+    type: integer
+    description: Student year
+    example: 2000
+  avatar:
+    type: string
+    description: Student avatar
+    default: null
+  onDuty:
+    type: boolean
+    description: Student on onDuty
+    example: false
+    default: false
+  ownerId:
+    type: string
+    description: Student owner id
+    example: 689633100da64db778cb1768
+  createdAt:
+    type: string
+    format: date-time
+    example: 2025-07-21T17:27:59.621+00:00
+  updatedAt:
+    type: string
+    format: date-time
+    example: 2025-07-21T17:27:59.621+00:00

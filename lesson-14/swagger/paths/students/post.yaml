@@ -1,0 +1,66 @@
+tags:
+  - Students
+summary: Create student
+operationId: createStudent
+description: Create student
+security:
+  - bearerAuth: []
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        required:
+          - name
+          - gender
+          - year
+          - avatar
+        properties:
+          name:
+            type: string
+            description: Student name
+            example: John Deere
+          gender:
+            type: string
+            description: Student gender
+            enum: ['male', 'female']
+            example: male
+          year:
+            type: integer
+            description: Student year
+            example: 2000
+          onDuty:
+            type: boolean
+            description: Student on onDuty
+            example: true
+            default: false
+          avatar:
+            type: string
+            format: binary
+            description: Student avatar
+responses:
+  '201':
+    description: Created a student
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 201
+            message:
+              type: string
+              example: Student created successfully
+            data:
+              $ref: ../../components/schemas/student.yaml
+  '400':
+    $ref: ../../components/responses/401.yaml
+  '401':
+    $ref: ../../components/responses/401.yaml
+  '500':
+    $ref: ../../components/responses/500.yaml
